@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Makeup by Melissa Vásquez</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf5f0;--surface:#fffdfb;--ink:#3a2f2b;--muted:#7a6a63;--rose:#d9a9a4;--rose-d:#9c5b57;--nude:#ecdccf;--gold:#b8955a;--line:#e8d9cc;--wa:#1f8f4e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f1815;--surface:#2a211d;--ink:#f3e8df;--muted:#c4b2a8;--rose:#c58f8a;--rose-d:#e3b3ae;--nude:#3a2d27;--gold:#d4b077;--line:#463832;--wa:#2fae68;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1f1815;--surface:#2a211d;--ink:#f3e8df;--muted:#c4b2a8;--rose:#c58f8a;--rose-d:#e3b3ae;--nude:#3a2d27;--gold:#d4b077;--line:#463832;--wa:#2fae68;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.15;margin:0}
+section{padding:72px 20px;max-width:1100px;margin:auto}
+.eyebrow{color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;font-weight:500}
+h2{font-size:clamp(2rem,6vw,2.8rem);margin:8px 0 12px}
+.lead{color:var(--muted);max-width:560px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .in{max-width:1100px;margin:auto;display:flex;align-items:center;gap:16px;padding:0 20px;height:64px}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.15rem;font-weight:600;white-space:nowrap;color:var(--ink);text-decoration:none}
+nav{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav a{color:var(--muted);text-decoration:none;font-size:.9rem;padding:12px 10px;white-space:nowrap;border-radius:8px}
+nav a:hover{color:var(--rose-d)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:999px;font:500 .95rem Jost,sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .25s,background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.btn-p{background:var(--rose-d);color:#fff}
+.btn-p:hover{background:#7f4642}
+.btn-s{background:transparent;color:var(--ink);border-color:var(--gold)}
+.btn-wa{background:var(--wa);color:#fff}
+.hero{max-width:none;padding:0;background:radial-gradient(900px 500px at 85% 10%,var(--nude),transparent 70%),linear-gradient(160deg,var(--bg),var(--nude));min-height:calc(100svh - 64px);display:flex;align-items:center}
+.hero .in{max-width:1100px;margin:auto;padding:56px 20px;display:grid;gap:40px;grid-template-columns:1fr;align-items:center}
+.hero h1{font-size:clamp(2.4rem,9vw,4.4rem);margin:14px 0}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:480px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.photo{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(180deg,var(--rose),var(--nude));border:1px solid var(--gold);display:grid;place-items:center;text-align:center;color:var(--ink);padding:20px;font-size:.85rem;overflow:hidden;max-width:380px;width:100%;justify-self:center}
+.photo img,.tile img,.svc img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{opacity:.75}
+.canva{margin-top:28px;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface)}
+.canva iframe{display:block;width:100%;aspect-ratio:16/10;min-height:300px;border:0}
+.canva .bar{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;padding:16px 20px;border-top:1px solid var(--line)}
+.canva .bar span{color:var(--muted);font-size:.9rem}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));margin-top:32px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s}
+.svc:hover{box-shadow:0 12px 30px rgba(120,80,70,.12);transform:translateY(-3px)}
+.svc .img{aspect-ratio:4/3;background:linear-gradient(135deg,var(--nude),var(--rose));display:grid;place-items:center;font-size:.8rem;color:var(--ink)}
+.svc .body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.svc h3{font-size:1.5rem}
+.svc p{margin:0;color:var(--muted);font-size:.95rem}
+.price{color:var(--gold);font-weight:500}
+.svc .btn{margin-top:auto}
+.tag{font-size:.75rem;color:var(--muted);border:1px dashed var(--line);border-radius:999px;padding:2px 10px;align-self:flex-start}
+.about{display:grid;gap:36px;grid-template-columns:1fr;align-items:center}
+.gal{display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:28px}
+.tile{aspect-ratio:1;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,var(--nude),var(--rose));display:grid;place-items:center;font-size:.78rem;text-align:center;padding:8px;color:var(--ink);transition:transform .4s,filter .4s}
+.tile:hover{transform:scale(1.02);filter:brightness(1.04)}
+.contact{text-align:center;background:var(--nude);border-radius:28px;margin:0 16px 72px;max-width:none}
+.contact .box{max-width:620px;margin:auto}
+.info{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:8px;color:var(--muted)}
+.info b{color:var(--ink);font-weight:500}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:0 20px 110px}
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:30;transition:transform .25s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:32px;height:32px;fill:#fff}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .8s,transform .8s}
+.reveal.on{opacity:1;transform:none}
+@media (min-width:760px){.hero .in{grid-template-columns:1.2fr 1fr}.about{grid-template-columns:1fr 1fr}.gal{grid-template-columns:repeat(3,1fr);gap:16px}section{padding:96px 32px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.reveal{opacity:1;transform:none}}
+.cat{grid-column:1/-1;font-size:1.8rem;margin-top:20px;padding-bottom:8px;border-bottom:1px solid var(--line)}.inc{margin:0;padding-left:18px;color:var(--muted);font-size:.9rem}.note{font-size:.8rem!important;font-style:italic}.hero .photo img{object-position:center top}</style>
+</head>
+<body>
+<header><div class="in"><a class="logo" href="#inicio">Makeup by Melissa Vásquez</a>
+<nav aria-label="Principal"><a href="#catalogo">Catálogo</a><a href="#servicios">Servicios</a><a href="#sobre">Sobre Melissa</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a></nav></div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="in">
+ <div><span class="eyebrow">Makeup by Melissa Vásquez</span>
+ <h1>Tu belleza, tu esencia, tu mejor versión</h1>
+ <p>Maquillaje profesional para resaltar tu belleza en cada ocasión</p>
+ <div class="cta"><a class="btn btn-p" href="#catalogo">Descubrir servicios</a><a class="btn btn-s" data-wa="hero" target="_blank" rel="noopener">Agenda por WhatsApp</a></div></div>
+ <div class="photo" id="heroPhoto"><span class="ph">Foto principal<br>(provisional)</span></div>
+</div></section>
+
+<section id="catalogo"><span class="eyebrow">Catálogo</span><h2>Nuestros servicios</h2>
+<p class="lead">Consulta el catálogo completo sin salir de la página.</p>
+<div class="canva"><iframe id="canvaFrame" title="Catálogo de servicios de Makeup by Melissa Vásquez" loading="lazy" allowfullscreen></iframe>
+<div class="bar"><span>¿No se ve bien en tu celular?</span><a class="btn btn-s" id="canvaBtn" target="_blank" rel="noopener">Ver catálogo completo</a></div></div></section>
+
+<section id="servicios" style="padding-top:24px"><span class="eyebrow">Reserva</span><h2>Elige tu servicio</h2>
+<p class="lead">Precios en pesos colombianos según el catálogo. Cada tarjeta abre WhatsApp con el mensaje listo; tú lo revisas y lo envías.</p>
+<div class="grid" id="svcGrid"></div></section>
+
+<section id="sobre"><div class="about"><div class="photo" id="aboutPhoto" style="border-radius:24px;aspect-ratio:4/5"><span class="ph">Foto de Melissa<br>(provisional)</span></div>
+<div><span class="eyebrow">Sobre Melissa</span><h2 id="aboutTitle"></h2><p id="aboutText" class="lead"></p></div></div></section>
+
+<section id="galeria"><span class="eyebrow">Portafolio</span><h2>Trabajos de Meli</h2><div class="gal" id="gal"></div></section>
+
+<section class="contact" id="contacto"><div class="box"><span class="eyebrow">Contacto</span>
+<h2>¿Lista para tu próximo look?</h2><p class="lead" style="margin:0 auto 24px">Hablemos y encontremos el maquillaje ideal para ti</p>
+<a class="btn btn-wa" data-wa="contact" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+<ul class="info" id="info"></ul></div></section>
+</main>
+<footer>© <span id="yr"></span> Makeup by Melissa Vásquez</footer>
+
+<a class="fab" id="fab" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.800 1.500 5.800 1.500h.0c6.900 0 12.500-5.600 12.500-12.500S22.900 3 16 3zm0 22.800c-1.900 0-3.700-.5-5.200-1.500l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10 10 0 0 1-1.500-5.200C5.400 9.900 10.200 5.300 16 5.300S26.500 9.900 26.500 15.500 21.800 25.800 16 25.800zm5.700-7.600c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.200-.8 1-1 1.200-.4.200-.7.100a8.500 8.500 0 0 1-4.200-3.700c-.3-.6.300-.5.900-1.700.1-.2 0-.4 0-.5s-.7-1.700-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400s-1 1-1 2.500 1.100 2.900 1.200 3.100c.2.200 2.100 3.300 5.200 4.600 1.900.8 2.700.9 3.600.8.600-.1 1.900-.8 2.100-1.500.3-.7.300-1.400.2-1.500s-.3-.2-.6-.4z"/></svg></a>
+
+<script>
+/* ============ DATOS EDITABLES (todo se cambia aquí) ============ */
+const IMG={"social": "img/social.jpg", "aero": "img/aero.jpg", "peinado": "img/peinado.jpg", "aeropein": "img/aeropein.jpg", "sweet": "img/sweet.jpg", "qprem": "img/qprem.jpg", "qaero": "img/qaero.jpg", "qaeropein": "img/qaeropein.jpg", "steel": "img/steel.jpg", "silver": "img/silver.jpg", "gold": "img/gold.jpg", "bprem": "img/bprem.jpg", "baero": "img/baero.jpg", "prueba": "img/prueba.jpg", "peinadosadic": "img/peinadosadic.jpg", "auto": "img/auto.jpg", "avanz": "img/avanz.jpg", "cejas": "img/cejas.jpg"};
+const GAL=["img/galeria-1.jpg", "img/galeria-2.jpg", "img/galeria-3.jpg", "img/galeria-4.jpg", "img/galeria-5.jpg", "img/galeria-6.jpg", "img/galeria-7.jpg", "img/galeria-8.jpg", "img/galeria-9.jpg"];
+const HERO="img/portada.jpg", ABOUT="img/melissa.jpg";
+const CONFIG = {
+  phone: "573138272779",
+  canvaView: "https://www.canva.com/design/DAFBAcyofXs/SfruMkbn7mTdymW7bilNOw/view?utlId=hfa9e3ba432#1",
+  canvaEmbed: "https://www.canva.com/design/DAFBAcyofXs/SfruMkbn7mTdymW7bilNOw/view?embed",
+  heroImage: HERO,   // foto principal (data URI o ruta relativa); vacío = provisional
+  aboutImage: ABOUT,  // foto de Melissa
+  about: {
+    title: "Belleza que se siente como tú",
+    text: "[Texto provisional — Melissa puede editarlo.] Creo que el maquillaje debe resaltar lo que ya te hace única, con atención personalizada y cuidado en cada detalle."
+  },
+  messages: {
+    hero: "Hola. Quisiera obtener información sobre tus servicios de maquillaje y conocer la disponibilidad para agendar una cita.",
+    contact: "Hola. Quisiera obtener información sobre tus servicios de maquillaje y conocer la disponibilidad para agendar una cita.",
+    fab: "Hola. Quisiera obtener información sobre tus servicios de maquillaje."
+  },
+  /* Plantilla por defecto; {servicio} se reemplaza por el nombre en minúscula */
+  defaultMessage: "Hola. Me interesa el servicio de {servicio}. ¿Podrías contarme sobre la disponibilidad y cómo puedo agendar una cita? ¡Gracias!",
+categories: {
+    social: { title: "Maquillaje social" },
+    quince: { title: "Quinceañeras" },
+    novias: { title: "Novias", template: "Hola. Me interesa el servicio de {servicio}. Quisiera conocer más detalles y consultar la disponibilidad para mi fecha. ¡Gracias!" },
+    extra: { title: "Peinados y cejas" },
+    cursos: { title: "Cursos personalizados" }
+  },
+  /* Campos de cada servicio: category, name, price, includes[], image, note, description, message */
+  services: [
+  {
+    "category": "social",
+    "name": "Maquillaje social",
+    "price": "$120.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Maquillaje social",
+      "Pestañas en tira"
+    ],
+    "image": IMG.social
+  },
+  {
+    "category": "social",
+    "name": "Maquillaje social y peinado",
+    "price": "$180.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Maquillaje social",
+      "Pestañas en tira",
+      "Peinado (planchado, ondas, recogido, peinados sueltos)"
+    ],
+    "image": IMG.peinado
+  },
+  {
+    "category": "social",
+    "name": "Maquillaje aerográfico",
+    "price": "$250.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Maquillaje aerográfico",
+      "Pestañas"
+    ],
+    "image": IMG.aero
+  },
+  {
+    "category": "social",
+    "name": "Maquillaje aerográfico y peinado",
+    "price": "$310.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Maquillaje aerográfico",
+      "Pestañas",
+      "Peinado (planchado, ondas, recogido, semirrecogidos)"
+    ],
+    "image": IMG.aeropein
+  },
+  {
+    "category": "quince",
+    "name": "Sweet (paquete #1) para quinceañeras",
+    "price": "$250.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje piel blindada",
+      "Pestañas en tira",
+      "Peinado (suelto, semirrecogido, recogido)",
+      "Bata rosa durante el maquillaje"
+    ],
+    "image": IMG.sweet,
+    "note": "Si el evento es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "quince",
+    "name": "Premium (paquete #2) para quinceañeras",
+    "price": "$450.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje piel blindada",
+      "Pestañas en tira",
+      "Peinado (suelto, semirrecogido, recogido)",
+      "Prueba de maquillaje y peinado antes del evento",
+      "Bata rosa durante la prueba y el día del evento"
+    ],
+    "image": IMG.qprem,
+    "note": "El valor del domicilio depende del lugar del evento"
+  },
+  {
+    "category": "quince",
+    "name": "Maquillaje aerográfico para quinceañeras",
+    "price": "$300.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje aerográfico + piel blindada",
+      "Pestañas",
+      "Bata rosa durante el día del evento"
+    ],
+    "image": IMG.qaero,
+    "note": "El valor del domicilio depende del lugar del evento"
+  },
+  {
+    "category": "quince",
+    "name": "Maquillaje aerográfico y peinado para quinceañeras",
+    "price": "$370.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje aerográfico + piel blindada",
+      "Pestañas",
+      "Peinado",
+      "Bata rosa durante el día del evento"
+    ],
+    "image": IMG.qaeropein,
+    "note": "El valor del domicilio depende del lugar del evento"
+  },
+  {
+    "category": "novias",
+    "name": "Bride Steel (paquete #1) para novias",
+    "price": "$300.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje piel blindada",
+      "Pestañas en tira",
+      "Peinado de novia (suelto, semirrecogido, recogido)",
+      "Bata Bride blanca para el maquillaje"
+    ],
+    "image": IMG.steel,
+    "note": "Si la boda es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "novias",
+    "name": "Bride Silver (paquete #2) para novias",
+    "price": "$500.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje piel blindada",
+      "Pestañas en tira",
+      "Peinado de novia (suelto, semirrecogido, recogido)",
+      "Prueba de maquillaje y peinado antes del evento",
+      "Bata Bride blanca en la prueba y el evento"
+    ],
+    "image": IMG.silver,
+    "note": "Si la boda es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "novias",
+    "name": "Bride Gold (paquete #3) para novias",
+    "price": "$600.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje piel blindada",
+      "Pestañas en tira",
+      "Peinado de novia (suelto, semirrecogido, recogido)",
+      "Prueba de maquillaje y peinado antes del evento",
+      "Acompañamiento y retoque durante la noche, al peinado y al maquillaje en los cambios de vestuario y escenario",
+      "Bata Bride blanca en la prueba y el evento"
+    ],
+    "image": IMG.gold,
+    "note": "Si la boda es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "novias",
+    "name": "Premium aerográfico para novias",
+    "price": "$420.000 COP",
+    "includes": [
+      "Limpieza facial sencilla con mascarillas hidratantes",
+      "Maquillaje aerográfico + piel blindada",
+      "Pestañas en tira",
+      "Peinado de novia (suelto, semirrecogido, recogido)",
+      "Bata Bride blanca para el maquillaje"
+    ],
+    "image": IMG.bprem,
+    "note": "Si la boda es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "novias",
+    "name": "Maquillaje aerográfico para novias",
+    "price": "$350.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Maquillaje aerográfico piel blindada",
+      "Pestañas",
+      "Bata Bride blanca durante el maquillaje"
+    ],
+    "image": IMG.baero,
+    "note": "Si el maquillaje es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "novias",
+    "name": "Prueba de maquillaje y peinado para novias",
+    "price": "$200.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Maquillaje piel blindada",
+      "Pestañas en tira",
+      "Peinado de novia (suelto, semirrecogido, recogido)",
+      "Maquillaje",
+      "Bata Bride blanca durante la prueba"
+    ],
+    "image": IMG.prueba,
+    "note": "Si la prueba es fuera de Barbosa el domicilio tiene un costo adicional"
+  },
+  {
+    "category": "extra",
+    "name": "Peinados adicionales",
+    "price": "Desde $40.000 COP",
+    "includes": [
+      "Planchado: $40.000",
+      "Ondas: $50.000",
+      "Ondas románticas: $60.000",
+      "Semirrecogido: $70.000",
+      "Recogidos: $80.000"
+    ],
+    "image": IMG.peinadosadic
+  },
+  {
+    "category": "extra",
+    "name": "Cejas y pestañas: lifting, laminado y henna",
+    "price": "Desde $20.000 COP",
+    "includes": [
+      "Lifting: $50.000",
+      "Pestañas punto a punto: $35.000",
+      "Diseño y depilación (hilo o cera): $20.000",
+      "Laminado de cejas: $50.000",
+      "Brow Lamination (diseño + laminación + henna): $75.000",
+      "Depilación y henna: $35.000",
+      "Lifting + laminado de cejas: $90.000",
+      "Lifting + Brow Lamination: $120.000"
+    ],
+    "image": IMG.cejas
+  },
+  {
+    "category": "cursos",
+    "name": "Curso de automaquillaje",
+    "price": "$500.000 COP",
+    "includes": [
+      "Preparación de la piel",
+      "Diseño de cejas",
+      "Maquillajes sociales",
+      "Kit de maquillaje básico"
+    ],
+    "image": IMG.auto
+  },
+  {
+    "category": "cursos",
+    "name": "Curso de maquillaje avanzado",
+    "price": "$500.000 COP",
+    "includes": [
+      "Maquillaje de novia",
+      "Técnicas avanzadas de piel y ojos",
+      "Kit de maquillaje"
+    ],
+    "image": IMG.avanz
+  }
+],
+  /* Fotos del portafolio: { src, alt } */
+  gallery: [{src:GAL[0],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[1],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[2],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[3],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[4],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[5],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[6],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[7],alt:"Maquillaje realizado por Melissa Vásquez"},{src:GAL[8],alt:"Maquillaje realizado por Melissa Vásquez"}],
+  contact: { instagram: "a.melie_makeup", ubicacion: "Barbosa, Santander (domicilio con costo adicional fuera de Barbosa, según el catálogo)", horarios: "", correo: "" }
+};
+/* ================================================================= */
+const wa = t => `https://wa.me/${CONFIG.phone}?text=${encodeURIComponent(t)}`;
+const svcMsg = s => s.message || CONFIG.defaultMessage.replace("{servicio}", s.name.toLowerCase());
+const $ = id => document.getElementById(id);
+const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html) e.innerHTML = html; return e; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* Tarjeta reutilizable */
+function serviceCard(s){
+  const c = el("article","svc reveal");
+  const img = el("div","img", s.image ? `<img src="${esc(s.image)}" alt="${esc(s.name)}" loading="lazy">` : `<span class="ph">Foto provisional</span>`);
+  const b = el("div","body");
+  b.append(el("h3","",esc(s.name)));
+  if (s.description) b.append(el("p","",esc(s.description)));
+  if (s.includes) b.append(el("ul","inc",s.includes.map(i=>`<li>${esc(i)}</li>`).join("")));
+  b.append(s.price ? el("div","price",esc(s.price)) : el("span","tag","Precio por confirmar"));
+  if (s.note) b.append(el("p","note",esc(s.note)));
+  const cat = CONFIG.categories[s.category] || {};
+  const a = el("a","btn btn-wa","Consultar por WhatsApp");
+  a.href = wa(s.message || (cat.template || CONFIG.defaultMessage).replace("{servicio}", s.name.toLowerCase()));
+  a.target = "_blank"; a.rel = "noopener";
+  a.setAttribute("aria-label","Consultar por WhatsApp: " + s.name);
+  b.append(a); c.append(img,b); return c;
+}
+Object.entries(CONFIG.categories).forEach(([id,cat]) => {
+  const list = CONFIG.services.filter(s => s.category === id);
+  if (!list.length) return;
+  $("svcGrid").append(el("h3","cat",esc(cat.title)));
+  list.forEach(s => $("svcGrid").append(serviceCard(s)));
+});
+
+/* Galería */
+CONFIG.gallery.forEach((g,i) => $("gal").append(el("div","tile reveal", g.src ? `<img src="${esc(g.src)}" alt="${esc(g.alt||"Maquillaje por Melissa Vásquez")}" loading="lazy">` : `<span class="ph">Foto provisional ${i+1}</span>`)));
+
+/* Imágenes principales */
+if (CONFIG.heroImage) $("heroPhoto").innerHTML = `<img src="${esc(CONFIG.heroImage)}" alt="Maquillaje profesional por Melissa Vásquez">`;
+if (CONFIG.aboutImage) $("aboutPhoto").innerHTML = `<img src="${esc(CONFIG.aboutImage)}" alt="Melissa Vásquez">`;
+$("aboutTitle").textContent = CONFIG.about.title; $("aboutText").textContent = CONFIG.about.text;
+
+/* Canva y WhatsApp */
+$("canvaFrame").src = CONFIG.canvaEmbed; $("canvaBtn").href = CONFIG.canvaView;
+document.querySelectorAll("[data-wa]").forEach(a => a.href = wa(CONFIG.messages[a.dataset.wa]));
+$("fab").href = wa(CONFIG.messages.fab);
+
+/* Contacto */
+const C = CONFIG.contact, pend = "Por confirmar";
+[["Instagram",C.instagram],["Ubicación",C.ubicacion],["Horarios",C.horarios],["Correo",C.correo]].forEach(([k,v]) => $("info").append(el("li","",`<b>${k}:</b> ${esc(v||pend)}`)));
+$("yr").textContent = new Date().getFullYear();
+
+/* Animación suave */
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } }), {threshold:.1}) : null;
+document.querySelectorAll(".reveal").forEach(e => io ? io.observe(e) : e.classList.add("on"));
+</script>
+</body>
+</html>
