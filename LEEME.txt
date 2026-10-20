@@ -1,0 +1,28 @@
+MAKEUP BY MELISSA VASQUEZ - Guia rapida
+
+PUBLICAR EN GITHUB PAGES
+1. Crea un repositorio publico en github.com (ej.: melissa-vasquez).
+2. Sube index.html y la carpeta img/ (Add file > Upload files).
+3. Settings > Pages > Branch: main, carpeta / (root) > Save.
+4. La web queda en https://TU-USUARIO.github.io/melissa-vasquez/
+
+CAMBIAR UNA FOTO
+Sube una foto nueva a img/ con el MISMO nombre que la anterior
+(Add file > Upload files > Commit changes). Medidas sugeridas:
+- portada.jpg y melissa.jpg: 640x800 px (vertical)
+- galeria-1.jpg ... galeria-9.jpg: 480x480 px (cuadradas)
+- fotos de servicios (social.jpg, sweet.jpg, etc.): 560x420 px
+Peso recomendado: menos de 300 KB, formato JPG (squoosh.app).
+
+AGREGAR FOTO A LA GALERIA
+Sube la foto a img/ y en index.html, dentro de CONFIG, busca "gallery"
+y agrega:  { src: "img/mi-foto.jpg", alt: "Maquillaje de novia" }
+
+AGREGAR O EDITAR SERVICIOS
+En index.html, dentro de CONFIG > services, copia una entrada y cambia
+category, name, price, includes, image y note.
+Categorias: social, quince, novias, extra, cursos.
+
+DATOS DE CONTACTO
+En CONFIG > contact: instagram, ubicacion, horarios y correo.
+Numero de WhatsApp: CONFIG > phone.
